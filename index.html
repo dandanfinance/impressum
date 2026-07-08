@@ -1,0 +1,370 @@
+<!DOCTYPE html>
+<html lang="de">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Impressum – dandanfinance</title>
+<style>
+  @import url('https://fonts.googleapis.com/css2?family=Montserrat:wght@400;500;600;700;800&display=swap');
+
+  :root{
+    --türkis: #21697a;
+    --türkis-dark: #1c5664;
+    --türkis-hell: #3d9eac;
+    --gold: #f0c030;
+    --gold-dark: #c8921c;
+    --creme: #f8f6f1;
+    --text-dark: #153e48;
+  }
+
+  *{ box-sizing: border-box; }
+
+  body{
+    margin:0;
+    font-family: 'Montserrat', sans-serif;
+    background: var(--creme);
+    color: var(--text-dark);
+    -webkit-font-smoothing: antialiased;
+  }
+
+  .header{
+    background: var(--türkis);
+    color: var(--creme);
+    padding: 18px 20px;
+    text-align:center;
+    font-weight: 700;
+    font-size: 14px;
+    letter-spacing: 0.5px;
+  }
+
+  .header .handle{ font-weight: 800; }
+
+  .wrap{
+    max-width: 640px;
+    margin: 0 auto;
+    padding: 32px 20px 60px;
+  }
+
+  .page-title{
+    font-size: 30px;
+    font-weight: 800;
+    color: var(--türkis-dark);
+    margin: 0 0 6px;
+  }
+
+  .page-sub{
+    font-size: 15px;
+    color: var(--text-dark);
+    opacity: 0.75;
+    margin: 0 0 28px;
+    line-height: 1.5;
+  }
+
+  /* Tabs */
+  .tabs{
+    display:flex;
+    gap: 8px;
+    margin-bottom: 24px;
+  }
+
+  .tab{
+    flex: 1;
+    padding: 14px 10px;
+    text-align: center;
+    background: #fff;
+    border: 2px solid var(--türkis-hell);
+    border-radius: 10px;
+    font-weight: 700;
+    font-size: 14px;
+    color: var(--türkis-dark);
+    cursor: pointer;
+    transition: all 0.15s ease;
+  }
+
+  .tab.active{
+    background: var(--türkis);
+    border-color: var(--türkis);
+    color: #fff;
+  }
+
+  .tab:focus-visible{
+    outline: 3px solid var(--gold);
+    outline-offset: 2px;
+  }
+
+  /* Impressum card */
+  .card{
+    display:none;
+    background: #fff;
+    border-radius: 12px;
+    border: 1px solid #e1ddd2;
+    padding: 28px 24px;
+    position: relative;
+    overflow: hidden;
+  }
+
+  .card.active{ display:block; }
+
+  .card::before{
+    content:"";
+    position:absolute;
+    top:0; left:0;
+    width: 5px;
+    height: 100%;
+    background: var(--gold);
+  }
+
+  .partner-name{
+    font-size: 20px;
+    font-weight: 800;
+    color: var(--türkis-dark);
+    margin: 0 0 2px;
+  }
+
+  .partner-role{
+    font-size: 13px;
+    font-weight: 700;
+    text-transform: uppercase;
+    letter-spacing: 1.5px;
+    color: var(--gold-dark);
+    margin: 0 0 20px;
+  }
+
+  .field-group{
+    margin-bottom: 18px;
+  }
+
+  .field-label{
+    font-size: 11px;
+    font-weight: 700;
+    text-transform: uppercase;
+    letter-spacing: 1.5px;
+    color: var(--türkis-hell);
+    margin: 0 0 4px;
+  }
+
+  .field-value{
+    font-size: 15px;
+    line-height: 1.55;
+    margin: 0;
+  }
+
+  .field-value a{
+    color: var(--türkis);
+    font-weight: 600;
+  }
+
+  .divider{
+    height: 1px;
+    background: #e9e5da;
+    margin: 22px 0;
+  }
+
+  .shared-note{
+    background: var(--türkis);
+    color: var(--creme);
+    border-radius: 12px;
+    padding: 18px 20px;
+    font-size: 13.5px;
+    line-height: 1.6;
+    margin-top: 24px;
+  }
+
+  .shared-note strong{ color: var(--gold); }
+
+  .footer{
+    text-align:center;
+    font-size: 12px;
+    color: var(--text-dark);
+    opacity: 0.55;
+    margin-top: 36px;
+  }
+
+  .placeholder{
+    background: #fff8e0;
+    color: var(--gold-dark);
+    padding: 1px 6px;
+    border-radius: 4px;
+    font-weight: 700;
+    font-size: 0.95em;
+  }
+
+  @media (prefers-reduced-motion: reduce){
+    .tab{ transition: none; }
+  }
+</style>
+</head>
+<body>
+
+  <div class="header">
+    <span class="handle">@dandanfinance</span> · doppelt so viel Durchblick
+  </div>
+
+  <div class="wrap">
+    <h1 class="page-title">Impressum</h1>
+    <p class="page-sub">
+      dandanfinance wird gemeinsam von zwei rechtlich eigenständigen Einzelunternehmern betrieben.
+      Bitte wählt aus, für welchen der beiden Ansprechpartner ihr die Anbieterkennzeichnung einsehen möchtet.
+    </p>
+
+    <div class="tabs" role="tablist" aria-label="Impressum wählen">
+      <div class="tab active" role="tab" aria-selected="true" tabindex="0" onclick="showTab('daniel', this)">Daniel</div>
+      <div class="tab" role="tab" aria-selected="false" tabindex="0" onclick="showTab('danil', this)">Danil</div>
+    </div>
+
+    <!-- IMPRESSUM DANIEL 1 -->
+    <div class="card active" id="daniel">
+      <p class="partner-name">Daniel Klimmer</p>
+      <p class="partner-role">Versicherungsmakler · Einzelunternehmer</p>
+
+      <div class="field-group">
+        <p class="field-label">Anschrift</p>
+        <p class="field-value">
+          Versbacher Str. 265b<br>
+          97078 Würzburg
+        </p>
+      </div>
+
+      <div class="field-group">
+        <p class="field-label">Kontakt</p>
+        <p class="field-value">
+          E-Mail: <a href="mailto:daniel.klimmer@lif.gmbh">daniel.klimmer@lif.gmbh</a><br>
+          Telefon: <a href="tel:+4915146433029">+49 151 46433029</a>
+        </p>
+      </div>
+
+      <div class="field-group">
+        <p class="field-label">Versicherungsmakler mit Erlaubnis nach § 34d Abs. 1 GewO</p>
+        <p class="field-value">
+          Vermittlerregister-Nr.: D-7NQ5-MUGTO-63<br>
+          Zuständige IHK: IHK für München und Oberbayern, Referat VIII 4<br>
+          Registrierung einsehbar unter:
+          <a href="https://www.vermittlerregister.info" target="_blank" rel="noopener">vermittlerregister.info</a>
+        </p>
+      </div>
+
+      <div class="field-group">
+        <p class="field-label">Darlehens- und Immobilienvermittler mit Erlaubnis nach § 34c Abs. 1 GewO</p>
+        <p class="field-value">
+          Zuständige IHK: Industrie- und Handelskammer für München und Oberbayern
+        </p>
+      </div>
+
+      <div class="field-group">
+        <p class="field-label">Berufshaftpflichtversicherung</p>
+        <p class="field-value">
+          Allianz, Königinstr. 28, 80802 München, Geltungsbereich: Deutschland
+        </p>
+      </div>
+
+      <div class="field-group">
+        <p class="field-label">Inhaltlich verantwortlich (§ 18 Abs. 2 MStV)</p>
+        <p class="field-value">Daniel Klimmer, Anschrift wie oben</p>
+      </div>
+    </div>
+
+    <!-- IMPRESSUM DANIEL 2 -->
+    <div class="card" id="danil">
+      <p class="partner-name">Danil Zikow</p>
+      <p class="partner-role">Versicherungsmakler · Einzelunternehmer</p>
+
+      <div class="field-group">
+        <p class="field-label">Anschrift</p>
+        <p class="field-value">
+          Breslauer Str. 19a<br>
+          90513 Zirndorf
+        </p>
+      </div>
+
+      <div class="field-group">
+        <p class="field-label">Kontakt</p>
+        <p class="field-value">
+          E-Mail: <a href="mailto:danil.zikow@lif.gmbh">danil.zikow@lif.gmbh</a><br>
+          Telefon: <a href="tel:+4915150987703">+49 151 50987703</a>
+        </p>
+      </div>
+
+      <div class="field-group">
+        <p class="field-label">Versicherungsmakler mit Erlaubnis nach § 34d Abs. 1 GewO</p>
+        <p class="field-value">
+          Vermittlerregister-Nr.: D-1A0J-HT4JT-57<br>
+          Zuständige IHK: IHK für München und Oberbayern, Referat VIII
+        </p>
+      </div>
+
+      <div class="field-group">
+        <p class="field-label">Finanzanlagenvermittler mit Erlaubnis nach § 34f Abs. 1 Nr. 1 GewO</p>
+        <p class="field-value">
+          Vermittlerregister-Nr.: D-F-155-4BQR-80<br>
+          Zuständige IHK: Industrie- und Handelskammer für München und Oberbayern
+        </p>
+      </div>
+
+      <div class="field-group">
+        <p class="field-label">Immobiliardarlehensvermittler mit Erlaubnis nach § 34i Abs. 1 GewO</p>
+        <p class="field-value">
+          Vermittlerregister-Nr.: D-W-155-BW4Q-37<br>
+          Zuständige IHK: Industrie- und Handelskammer für München und Oberbayern
+        </p>
+      </div>
+
+      <div class="field-group">
+        <p class="field-label">Darlehens- und Immobilienvermittler mit Erlaubnis nach § 34c Abs. 1 GewO</p>
+        <p class="field-value">
+          Zuständige IHK: Industrie- und Handelskammer für München und Oberbayern
+        </p>
+      </div>
+
+      <div class="field-group">
+        <p class="field-value" style="font-size:13px; opacity:0.75;">
+          Alle Registrierungen einsehbar unter
+          <a href="https://www.vermittlerregister.info" target="_blank" rel="noopener">vermittlerregister.info</a>
+        </p>
+      </div>
+
+      <div class="field-group">
+        <p class="field-label">Berufshaftpflichtversicherung</p>
+        <p class="field-value">
+          Allianz, Königinstr. 28, 80802 München, Geltungsbereich: Deutschland
+        </p>
+      </div>
+
+      <div class="field-group">
+        <p class="field-label">Inhaltlich verantwortlich (§ 18 Abs. 2 MStV)</p>
+        <p class="field-value">Danil Zikow, Anschrift wie oben</p>
+      </div>
+    </div>
+
+    <div class="shared-note">
+      <strong>Hinweis zum gemeinsamen Auftritt:</strong> Die Socialmedia Accounts @dandanfinance werden von beiden oben
+      genannten Personen inhaltlich gemeinsam gestaltet. Kundenanfragen werden von den beiden Ansprechpartnern
+      jeweils eigenständig und in eigener rechtlicher Verantwortung bearbeitet.
+    </div>
+
+    <div class="footer">© dandanfinance</div>
+  </div>
+
+  <script>
+    function showTab(id, el){
+      document.querySelectorAll('.card').forEach(c => c.classList.remove('active'));
+      document.querySelectorAll('.tab').forEach(t => {
+        t.classList.remove('active');
+        t.setAttribute('aria-selected', 'false');
+      });
+      document.getElementById(id).classList.add('active');
+      el.classList.add('active');
+      el.setAttribute('aria-selected', 'true');
+    }
+
+    document.querySelectorAll('.tab').forEach(tab => {
+      tab.addEventListener('keydown', (e) => {
+        if(e.key === 'Enter' || e.key === ' '){
+          e.preventDefault();
+          tab.click();
+        }
+      });
+    });
+  </script>
+
+</body>
+</html>
